@@ -1,0 +1,252 @@
+/* ─────────────────────────────────────────────
+   DJ SORREN — Music Pages (Persian / House / All)
+───────────────────────────────────────────── */
+
+/* ── Page Hero ─────────────────────────────── */
+.page-hero {
+    padding: calc(var(--nav-h) + 80px) 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero-accent {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.06;
+    pointer-events: none;
+    top: -200px;
+    left: -200px;
+}
+
+.page-hero-accent.persian {
+    background: var(--persian-color);
+}
+
+.page-hero-accent.house {
+    background: var(--house-color);
+}
+
+.page-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.page-hero-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.page-hero-dot.persian {
+    background: var(--persian-color);
+    box-shadow: 0 0 10px rgba(200, 169, 110, 0.5);
+}
+
+.page-hero-dot.house {
+    background: var(--house-color);
+    box-shadow: 0 0 10px rgba(126, 184, 212, 0.5);
+}
+
+.page-hero-tag-label {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.page-hero-tag-label.persian {
+    color: var(--persian-color);
+}
+
+.page-hero-tag-label.house {
+    color: var(--house-color);
+}
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: var(--white-60);
+    max-width: 480px;
+    line-height: 1.7;
+}
+
+/* ── Music Grid ─────────────────────────────── */
+.music-grid {
+    padding: 0 0 120px;
+}
+
+.releases-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 640px) {
+    .releases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .releases-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .releases-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Latest release — featured large */
+.release-featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 0 60px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .release-featured {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .release-featured {
+        grid-template-columns: 5fr 4fr;
+        gap: 56px;
+    }
+}
+
+.release-featured-artwork {
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid var(--border);
+}
+
+.release-featured-artwork img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.release-featured-artwork:hover img {
+    transform: scale(1.03);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.release-featured-artwork:hover .featured-overlay {
+    opacity: 1;
+}
+
+.featured-play-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.9);
+    transition: transform var(--transition), background var(--transition);
+}
+
+.release-featured-artwork:hover .featured-play-btn {
+    transform: scale(1);
+}
+
+.featured-play-btn:hover {
+    background: var(--accent);
+}
+
+.featured-play-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--black);
+    margin-left: 4px;
+}
+
+.release-featured-info {
+    padding: 8px 0;
+}
+
+.release-featured-info .badge {
+    margin-bottom: 16px;
+}
+
+.release-featured-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+}
+
+.release-featured-latin {
+    font-size: 0.85rem;
+    color: var(--white-30);
+    margin-bottom: 8px;
+}
+
+.release-featured-artist {
+    font-size: 0.88rem;
+    color: var(--white-60);
+    margin-bottom: 8px;
+}
+
+.release-featured-date {
+    font-size: 0.75rem;
+    color: var(--white-30);
+    margin-bottom: 28px;
+}
+
+.release-featured-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.featured-label {
+    font-size: 0.65rem;
+    color: var(--white-30);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: block;
+}

@@ -1,0 +1,426 @@
+/* ─────────────────────────────────────────────
+   DJ SORREN — Home Page
+   Static choice cards · 3D metallic title
+   No layout shift / expansion on hover
+───────────────────────────────────────────── */
+
+/* ── Body ──────────────────────────────────── */
+.home-body {
+    overflow: hidden;
+    height: 100svh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Full-screen atmospheric background ────── */
+.home-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.home-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+}
+
+.home-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 50% 50%,
+            rgba(8, 8, 8, 0.2) 0%,
+            rgba(8, 8, 8, 0.7) 60%,
+            rgba(8, 8, 8, 0.95) 100%);
+}
+
+/* ── Main layout ───────────────────────────── */
+.home-main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100svh;
+    padding: 24px;
+    gap: 40px;
+}
+
+/* ── Artist header ─────────────────────────── */
+.home-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-overline {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 5px 14px;
+    border: 1px solid rgba(200, 169, 110, 0.25);
+    border-radius: 100px;
+}
+
+/* ── 3D metallic title ─────────────────────── */
+.home-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    line-height: 1;
+    user-select: none;
+    flex-wrap: wrap;
+}
+
+.title-dj {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 11vw, 9.5rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    /* Metallic gold gradient — matches Sorren 3D title */
+    background: linear-gradient(170deg,
+            #ffffff 0%,
+            #f4e8cc 15%,
+            #c8a96e 35%,
+            #e8d0a0 50%,
+            #a07840 65%,
+            #c8a96e 80%,
+            #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Glow depth layers */
+    filter:
+        drop-shadow(0 2px 0 rgba(160, 120, 64, 0.6)) drop-shadow(0 0 50px rgba(200, 169, 110, 0.28));
+}
+
+.title-sorren {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 11vw, 9.5rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    line-height: 0.88;
+
+    /* Metallic gold gradient — creates 3D depth illusion */
+    background: linear-gradient(170deg,
+            #ffffff 0%,
+            #f4e8cc 15%,
+            #c8a96e 35%,
+            #e8d0a0 50%,
+            #a07840 65%,
+            #c8a96e 80%,
+            #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Glow depth layers */
+    filter:
+        drop-shadow(0 2px 0 rgba(160, 120, 64, 0.6)) drop-shadow(0 0 60px rgba(200, 169, 110, 0.28)) drop-shadow(0 0 120px rgba(200, 169, 110, 0.12));
+}
+
+.home-tagline {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-30);
+    margin-top: 4px;
+}
+
+/* ── Choice cards container ────────────────── */
+.home-choices {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+/* ── Individual choice card ────────────────── */
+.choice-card {
+    position: relative;
+    width: 220px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: rgba(12, 12, 12, 0.6);
+    backdrop-filter: blur(20px);
+
+    /* Static — NO transform, NO size change */
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* ── Card artwork (zooms inside, card stays still) */
+.choice-art-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.choice-art {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.5s ease;
+    filter: brightness(0.55) saturate(0.8);
+}
+
+.persian-art {
+    background-image: url('../assets/images/persian_artwork.png');
+}
+
+.house-art {
+    background-image: url('../assets/images/house_artwork.png');
+}
+
+/* Colour iris overlay inside the artwork */
+.choice-art-iris {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.persian-iris {
+    background: radial-gradient(ellipse at 30% 70%, rgba(200, 169, 110, 0.3) 0%, transparent 60%);
+}
+
+.house-iris {
+    background: radial-gradient(ellipse at 70% 70%, rgba(126, 184, 212, 0.3) 0%, transparent 60%);
+}
+
+/* ── Card body ─────────────────────────────── */
+.choice-body {
+    position: relative;
+    z-index: 2;
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.choice-pipeline-logo {
+    height: 48px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+}
+
+/* ── Pipeline chip ─────────────────────────── */
+.choice-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+}
+
+.chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.chip-dot.persian {
+    background: var(--persian-color);
+    box-shadow: 0 0 8px rgba(200, 169, 110, 0.8);
+}
+
+.chip-dot.house {
+    background: var(--house-color);
+    box-shadow: 0 0 8px rgba(126, 184, 212, 0.8);
+}
+
+.chip-text {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--white-30);
+}
+
+/* ── Pipeline title inside card ────────────── */
+.choice-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-top: 4px;
+}
+
+.choice-desc {
+    font-size: 0.7rem;
+    color: var(--white-30);
+    line-height: 1.6;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* ── Enter CTA ─────────────────────────────── */
+.choice-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white-30);
+    transition: color 0.3s ease, gap 0.3s ease;
+}
+
+/* ── Ambient glow layer (behind card border) ─ */
+.choice-glow {
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.persian-glow {
+    box-shadow: 0 0 0 1px rgba(200, 169, 110, 0.6), 0 0 60px rgba(200, 169, 110, 0.2);
+}
+
+.house-glow {
+    box-shadow: 0 0 0 1px rgba(126, 184, 212, 0.6), 0 0 60px rgba(126, 184, 212, 0.2);
+}
+
+/* ── Hover states (STATIC — only glow, no movement) */
+.choice-card.choice-persian:hover {
+    border-color: rgba(200, 169, 110, 0.5);
+    box-shadow:
+        0 0 0 1px rgba(200, 169, 110, 0.3),
+        0 20px 80px rgba(200, 169, 110, 0.18),
+        0 0 120px rgba(200, 169, 110, 0.08);
+}
+
+.choice-card.choice-house:hover {
+    border-color: rgba(126, 184, 212, 0.5);
+    box-shadow:
+        0 0 0 1px rgba(126, 184, 212, 0.3),
+        0 20px 80px rgba(126, 184, 212, 0.18),
+        0 0 120px rgba(126, 184, 212, 0.08);
+}
+
+.choice-card:hover .choice-art {
+    transform: scale(1.06);
+    filter: brightness(0.72) saturate(1.1);
+}
+
+.choice-card:hover .choice-art-iris {
+    opacity: 1;
+}
+
+.choice-card.choice-persian:hover .choice-cta,
+.choice-card.choice-persian:hover .choice-name {
+    color: var(--persian-color);
+}
+
+.choice-card.choice-house:hover .choice-cta,
+.choice-card.choice-house:hover .choice-name {
+    color: var(--house-color);
+}
+
+.choice-card:hover .choice-cta {
+    gap: 10px;
+}
+
+/* ── Footer copy ───────────────────────────── */
+.home-footer-copy {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    color: var(--white-30);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 540px) {
+    .home-body {
+        overflow: auto;
+        height: auto;
+        min-height: 100svh;
+    }
+
+    .home-main {
+        height: auto;
+        padding: 80px 20px 60px;
+        gap: 32px;
+    }
+
+    .home-choices {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .choice-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .home-footer-copy {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 8px;
+    }
+}
+
+@media (min-width: 541px) and (max-width: 900px) {
+    .choice-card {
+        width: 190px;
+    }
+
+    .title-sorren {
+        font-size: clamp(3.5rem, 10vw, 7rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .choice-card {
+        width: 260px;
+    }
+}
