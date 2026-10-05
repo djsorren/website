@@ -129,7 +129,7 @@ const SOCIAL_LINKS = {
   },
   house: {
     instagram: "https://www.instagram.com/djsorren_house?igsh=MXZkN2FzZXduM3M4Ng%3D%3D&utm_source=qr",
-    facebook: null,
+    facebook: "https://www.facebook.com/djsorren.house",
     telegram: "https://t.me/djsorrenh",
   }
 };
