@@ -209,6 +209,109 @@
     margin: 0;
 }
 
+/* ── Farsi Labels & Highlights ──────────────── */
+.farsi-title-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--persian-color);
+    background: rgba(200, 169, 110, 0.12);
+    border: 1px solid rgba(200, 169, 110, 0.28);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: 10px;
+    vertical-align: middle;
+    box-shadow: 0 0 12px rgba(200, 169, 110, 0.1);
+}
+
+.section-eyebrow .farsi-eyebrow {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 600;
+    opacity: 0.95;
+    margin-left: 6px;
+}
+
+.about-farsi-card {
+    margin-top: 20px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(200, 169, 110, 0.09) 0%, rgba(17, 17, 17, 0.8) 100%);
+    border: 1px solid rgba(200, 169, 110, 0.25);
+    border-right: 3px solid var(--persian-color);
+    border-radius: var(--radius-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-farsi-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(200, 169, 110, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.about-farsi-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    direction: rtl;
+    text-align: right;
+}
+
+.about-farsi-pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #111;
+    background: var(--persian-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.about-farsi-card-title {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.about-farsi-desc {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+}
+
+.about-farsi-desc strong {
+    color: var(--persian-color);
+    font-weight: 700;
+}
+
+.stat-farsi {
+    display: block;
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.72rem;
+    color: var(--persian-color);
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+
 /* ── 1. Hero Header ────────────────────────── */
 .pipeline-hero {
     position: relative;
