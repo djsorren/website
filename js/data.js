@@ -153,6 +153,12 @@ const STREAMING_PLAYLISTS = {
         subtitle: "Official Persian Playlist 2",
         url: "https://open.spotify.com/album/0dSbmvJHvmPOt32UXsei4O?si=3ojD2WBQROybEhs3qUi3lA",
         active: true
+      },
+      {
+        title: "DJ Sorren - Persian Music Playlist vol 3",
+        subtitle: "Official Persian Playlist 3",
+        url: "https://open.spotify.com/album/1bf5y4ZXh4ECxfyXvjvmjD?si=PTrX_TI_QEqE8IOL7a0BuA",
+        active: true
       }
     ],
     appleMusic: [
@@ -166,6 +172,12 @@ const STREAMING_PLAYLISTS = {
         title: "DJ Sorren - Persian Music Playlist vol 2",
         subtitle: "Official Persian Playlist 2",
         url: "https://music.apple.com/ca/album/persian-dance-music-vol2/6809371512",
+        active: true
+      },
+      {
+        title: "DJ Sorren - Persian Music Playlist vol 3",
+        subtitle: "Official Persian Playlist 3",
+        url: "https://music.apple.com/ca/album/persian-dance-music-vol3/6824373623",
         active: true
       }
     ],
@@ -181,6 +193,12 @@ const STREAMING_PLAYLISTS = {
         subtitle: "Audio Playlist 2",
         url: "https://music.youtube.com/playlist?list=OLAK5uy_nS3PVc9zwnMEIajuub2YiHlc_iW-otNac&si=pjfsk7LMP4IOXO6h",
         active: true
+      },
+      {
+        title: "DJ Sorren - Persian Music Playlist vol 3",
+        subtitle: "Audio Playlist 3",
+        url: "https://music.youtube.com/playlist?list=OLAK5uy_mLnI81XTJ3iA-xEXTgIhEIbeJi09nFv5s&si=k0GaClkzja979U93",
+        active: true
       }
     ],
     youtube: [
@@ -194,6 +212,12 @@ const STREAMING_PLAYLISTS = {
         title: "DJ Sorren - Persian Music Playlist vol 2",
         subtitle: "Video Playlist 2",
         url: "https://youtube.com/playlist?list=OLAK5uy_mDdcevzNr-zngafu3tGmHm58nbqxmz5cw&si=WyDi27FvyupXE_Rk",
+        active: true
+      },
+      {
+        title: "DJ Sorren - Persian Music Playlist vol 3",
+        subtitle: "Video Playlist 3",
+        url: "https://youtube.com/playlist?list=OLAK5uy_lqxONjiQALoSGZOYxxiQbe0GAjLaot6qw&si=bDoHlQjaSxgRf_If",
         active: true
       }
     ],
@@ -220,6 +244,12 @@ const STREAMING_PLAYLISTS = {
         subtitle: "Official House Playlist 2",
         url: "https://open.spotify.com/album/5JuWaSigCkyQvdDjhC4XoM?si=s1RAUdMPSqyeCmQ3AnvigQ",
         active: true
+      },
+      {
+        title: "DJ Sorren - House Music Playlist vol 3",
+        subtitle: "Official House Playlist 3",
+        url: "https://open.spotify.com/album/4CwyphOMxsRlVvw5Q3HUVo?si=ex2agob0StqERwIIClQNOA",
+        active: true
       }
     ],
     appleMusic: [
@@ -233,6 +263,12 @@ const STREAMING_PLAYLISTS = {
         title: "DJ Sorren - House Music Playlist vol 2",
         subtitle: "Official House Playlist 2",
         url: "https://music.apple.com/ca/album/house-music-vol2-ep/6809351756",
+        active: true
+      },
+      {
+        title: "DJ Sorren - House Music Playlist vol 3",
+        subtitle: "Official House Playlist 3",
+        url: "https://music.apple.com/ca/album/house-music-vol3/6825134225",
         active: true
       }
     ],
@@ -248,6 +284,12 @@ const STREAMING_PLAYLISTS = {
         subtitle: "Audio Playlist 2",
         url: "https://music.youtube.com/playlist?list=OLAK5uy_nUYiDlAImyApY0Ab-T7evf8Vl792T2zcs&si=hOBPWxei1mkiYVK8",
         active: true
+      },
+      {
+        title: "DJ Sorren - House Music Playlist vol 3",
+        subtitle: "Audio Playlist 3",
+        url: "https://music.youtube.com/playlist?list=OLAK5uy_lIDohM3by-hiCzMWmnGhH0bOQYYqr1Y_8&si=maKceUw4ZlNq919v",
+        active: true
       }
     ],
     youtube: [
@@ -261,6 +303,12 @@ const STREAMING_PLAYLISTS = {
         title: "DJ Sorren - House Music Playlist vol 2",
         subtitle: "Video Playlist 2",
         url: "https://youtube.com/playlist?list=OLAK5uy_mMMAauBcvBo-nE2RCsgUNI2HlNQqzyC68&si=Vg01smCd3InG4bAk",
+        active: true
+      },
+      {
+        title: "DJ Sorren - House Music Playlist vol 3",
+        subtitle: "Video Playlist 3",
+        url: "https://youtube.com/playlist?list=OLAK5uy_mFZxbA-tjPub79dMP-C5mJ3cmn7wMnHDU&si=L5DhWjPJY38hIxd1",
         active: true
       }
     ],
